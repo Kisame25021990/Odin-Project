@@ -7,6 +7,8 @@ const APP_SHELL = [
   "app.webmanifest",
   "content/manifest.json",
   "glossaire.json",
+  "quizzes.json",
+  "assets/python-worker.js",
   "assets/styles.css",
   "assets/app.js",
   "assets/marked.min.js",

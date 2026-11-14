@@ -6,6 +6,7 @@
   const THEME_KEY = "odin-theme";
   const TRACK_KEY = "odin-track";
   const COLLAPSED_KEY = "odin-collapsed-v2";
+  const QUIZ_KEY = "odin-quiz-v1";
 
   const state = {
     manifest: null,
@@ -18,6 +19,7 @@
     glossary: [],
     searchIndex: new Map(),
     collapsed: new Set()
+    , quizzes: {}, quizScores: {}, pyodide: null, terminalWorker: null
   };
 
   const els = {};
@@ -430,9 +432,13 @@
         return;
       }
       const done = isDone(lesson);
+      const passed = (state.quizScores[lesson.id] || {}).score >= 80;
       const active = state.current !== null && lessonKey(state.current) === key;
       link.classList.toggle("is-done", done);
       link.classList.toggle("is-active", active);
+      let badge=link.querySelector(".quiz-badge");
+      if(passed&&!badge){badge=document.createElement("span");badge.className="quiz-badge";badge.textContent="Quiz réussi";link.querySelector(".nav-label").appendChild(badge);}
+      if(!passed&&badge)badge.remove();
       if (active) {
         link.setAttribute("aria-current", "page");
       } else {
@@ -588,6 +594,53 @@
       .toLowerCase();
   }
 
+  function loadQuizScores() {
+    try { state.quizScores = JSON.parse(readStorage(QUIZ_KEY) || "{}"); } catch (error) { state.quizScores = {}; }
+  }
+
+  function appendQuiz(parent, lesson) {
+    const quiz = state.quizzes[lesson.id];
+    if (!quiz || !quiz.length) return;
+    const section = document.createElement("section");
+    section.className = "quiz-panel";
+    section.innerHTML = '<h2>Vérification des acquis</h2><form class="quiz-form"></form><p class="quiz-result" aria-live="polite"></p><button type="button" class="quiz-restart">Recommencer</button>';
+    const form = section.querySelector("form");
+    const order = quiz.map(function (_, i) { return i; });
+    function shuffle(items) { for (let i=items.length-1;i>0;i--) { const j=Math.floor(Math.random()*(i+1)); [items[i],items[j]]=[items[j],items[i]]; } return items; }
+    shuffle(order).forEach(function (qi, number) {
+      const q=quiz[qi], field=document.createElement("fieldset");
+      field.dataset.quizIndex=String(qi);
+      field.innerHTML='<legend>'+(number+1)+'. '+escapeHtml(q.question)+'</legend>';
+      const opts=q.choices.map(function (choice,i) {return {choice:choice,index:i};}); shuffle(opts).forEach(function (item) {
+        const label=document.createElement("label"), input=document.createElement("input"); input.type=q.type==="multiple"?"checkbox":"radio"; input.name="q"+qi; input.value=item.index;
+        label.appendChild(input); label.appendChild(document.createTextNode(" "+item.choice)); field.appendChild(label);
+      });
+      const explain=document.createElement("p"); explain.className="quiz-explanation"; explain.hidden=true; explain.textContent=q.explication; field.appendChild(explain); form.appendChild(field);
+    });
+    const submit=document.createElement("button"); submit.type="submit"; submit.textContent="Vérifier mes réponses"; form.appendChild(submit);
+    form.addEventListener("submit",function (event) { event.preventDefault(); let score=0; quiz.forEach(function(q,qi){const selected=Array.from(form.querySelectorAll('[name="q'+qi+'"]:checked')).map(function(x){return Number(x.value);}).sort();const expected=q.answer.slice().sort();const correct=selected.length===expected.length&&selected.every(function(x,i){return x===expected[i];}); if(correct)score++; const field=form.querySelector('[data-quiz-index="'+qi+'"]'), explanation=field.querySelector(".quiz-explanation"); explanation.hidden=false; explanation.classList.toggle("is-correct",correct); explanation.classList.toggle("is-wrong",!correct);});
+      const percent=Math.round(score/quiz.length*100), saved=state.quizScores[lesson.id]||{score:0}; if(percent>saved.score){state.quizScores[lesson.id]={score:percent,date:new Date().toISOString()};writeStorage(QUIZ_KEY,JSON.stringify(state.quizScores));} section.querySelector(".quiz-result").textContent="Score : "+score+" / "+quiz.length+" ("+percent+" %)."; updateNavState(); });
+    section.querySelector(".quiz-restart").addEventListener("click",function(){appendQuiz(parent,lesson);section.remove();}); parent.appendChild(section);
+  }
+
+  function appendTerminal(parent) {
+    const details=document.createElement("details"); details.className="python-terminal"; details.id="python-panel";
+    details.innerHTML='<summary>Ouvrir le terminal</summary><p class="terminal-status" aria-live="polite">Python se chargera au premier lancement.</p><textarea id="python-code" aria-label="Code Python" rows="8" spellcheck="false">print("Bonjour !")</textarea><div class="terminal-actions"><button type="button" class="terminal-run">Exécuter</button><button type="button" class="terminal-clear">Effacer</button></div><pre class="terminal-output" aria-live="polite"></pre>';
+    parent.appendChild(details);
+    const status=details.querySelector(".terminal-status"), output=details.querySelector(".terminal-output");
+    details.querySelector(".terminal-clear").addEventListener("click",function(){document.getElementById("python-code").value="";output.textContent="";});
+    details.querySelector(".terminal-run").addEventListener("click",async function(){
+      const run=details.querySelector(".terminal-run"); run.disabled=true; output.textContent="";
+      try {
+        if(!state.terminalWorker){status.textContent="Chargement de Python… (~10 Mo)"; const worker=new Worker("assets/python-worker.js"); state.terminalWorker=worker; worker.onmessage=function(e){if(e.data.type==="ready"){status.textContent="Python est prêt.";}else if(e.data.type==="result"){output.textContent=e.data.text;output.classList.toggle("terminal-error",e.data.error);run.disabled=false;}else if(e.data.type==="input"){e.data.value=window.prompt(e.data.prompt||"Saisissez une valeur :")||"";worker.postMessage({type:"input",id:e.data.id,value:e.data.value});}}; worker.onerror=function(){status.textContent="Impossible de charger Python. Vérifiez votre connexion ou l'installation locale de Pyodide.";run.disabled=false;}; await new Promise(function(resolve,reject){const t=setTimeout(function(){reject(new Error("CDN inaccessible"));},20000);worker.addEventListener("message",function ready(e){if(e.data.type==="ready"){clearTimeout(t);worker.removeEventListener("message",ready);resolve();}},{once:false});}); }
+        let code=document.getElementById("python-code").value;
+        const inputs=Array.from(code.matchAll(/\binput\s*\((?:['"]([^'"]*)['"])?\)/g));
+        if(inputs.length){const values=[];for(const item of inputs){values.push(window.prompt(item[1]||"Valeur pour input() :")||"");} code="__odin_inputs = "+JSON.stringify(values)+"\nimport builtins\n__odin_it = iter(__odin_inputs)\nbuiltins.input = lambda prompt='': next(__odin_it, '')\n"+code;}
+        state.terminalWorker.postMessage({type:"run",code:code}); setTimeout(function(){if(run.disabled){state.terminalWorker.terminate();state.terminalWorker=null;output.textContent="Timeout : exécution interrompue après 10 secondes.";output.classList.add("terminal-error");run.disabled=false;}},10000);
+      } catch(error){status.textContent="Pyodide inaccessible. Vérifiez votre connexion ou l'installation dans /pyodide/.";run.disabled=false;}
+    });
+  }
+
   async function renderLesson(lesson) {
     state.current = lesson;
     expandModule(lesson.moduleId);
@@ -636,6 +689,9 @@
     els.lesson.innerHTML = "";
     els.lesson.appendChild(header);
     els.lesson.appendChild(body);
+
+    if (lesson.trackId === "python") appendTerminal(els.lesson);
+    appendQuiz(els.lesson, lesson);
 
     const checkbox = $("done-checkbox");
     checkbox.addEventListener("change", function () {
@@ -891,6 +947,21 @@
 
       bar.appendChild(label);
       bar.appendChild(button);
+      if (state.current && state.current.trackId === "python" && language === "python") {
+        const tryButton = document.createElement("button");
+        tryButton.type = "button";
+        tryButton.className = "copy-btn";
+        tryButton.textContent = "Essayer";
+        tryButton.addEventListener("click", function () {
+          const terminal = document.getElementById("python-code");
+          if (!terminal) return;
+          terminal.value = code.textContent || "";
+          document.getElementById("python-panel").open = true;
+          document.getElementById("python-panel").scrollIntoView({ behavior: "smooth", block: "center" });
+          terminal.focus();
+        });
+        bar.appendChild(tryButton);
+      }
       wrapper.insertBefore(bar, pre);
     });
   }
@@ -1166,7 +1237,9 @@
     });
 
     loadProgress();
+    loadQuizScores();
     loadGlossary();
+    try { const qr=await fetch("quizzes.json"); if(qr.ok)state.quizzes=await qr.json(); } catch(error) { /* quiz facultatif si le fichier est indisponible */ }
 
     const saved = readStorage(TRACK_KEY);
     const initial = getTrack(saved) || state.manifest.tracks[0];

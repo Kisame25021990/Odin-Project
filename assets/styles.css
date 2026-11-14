@@ -1118,3 +1118,7 @@ html[data-theme="dark"] .callout--tip {
     transition: none;
   }
 }
+
+/* Quiz et terminal Python */
+.quiz-panel,.python-terminal{margin:28px 0;padding:18px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface)}
+.quiz-panel h2{margin-top:0}.quiz-panel fieldset{margin:16px 0;padding:14px;border:1px solid var(--border);border-radius:10px}.quiz-panel legend{font-weight:700}.quiz-panel label{display:block;padding:9px 4px;cursor:pointer}.quiz-panel button,.terminal-actions button{min-height:44px;padding:9px 16px;border:1px solid var(--border);border-radius:9px;background:var(--surface-2,var(--surface));color:var(--text);font:inherit;cursor:pointer}.quiz-explanation{padding:10px;border-radius:8px}.quiz-explanation.is-correct{color:var(--success,#18864b)}.quiz-explanation.is-wrong,.terminal-error{color:var(--danger,#c33)}.quiz-restart{margin:8px}.quiz-badge{display:inline-block;margin:5px 4px 0;padding:3px 7px;border-radius:99px;background:rgba(45,160,95,.16);color:var(--success,#18864b);font-size:.72rem}.python-terminal summary{padding:10px 4px;font-weight:700;cursor:pointer}.python-terminal textarea{display:block;width:100%;margin:12px 0;padding:12px;border:1px solid var(--border);border-radius:8px;background:var(--code-bg);color:var(--code-text);font: .9rem/1.5 ui-monospace,monospace}.terminal-actions{display:flex;gap:10px}.terminal-output{min-height:3em;padding:12px;overflow:auto;white-space:pre-wrap;background:var(--code-bg);color:var(--code-text);border-radius:8px}

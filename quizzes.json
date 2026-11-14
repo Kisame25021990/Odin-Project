@@ -1,0 +1,7 @@
+{
+  "operateurs": [
+    {"type":"single","question":"Que renvoie l'opérateur de division entière `7 // 2` présenté dans la leçon ?","choices":["3","3.5","1","Une erreur"],"answer":[0],"explication":"La division entière conserve le quotient entier : 7 // 2 vaut 3. La division / donnerait 3.5."},
+    {"type":"single","question":"Que affiche `print(2 ** 3)` ?","choices":["8","6","9","23"],"answer":[0],"explication":"L'opérateur ** exprime l'exponentiation : 2 ** 3 correspond à 2 × 2 × 2, donc 8."},
+    {"type":"multiple","question":"Quelles affirmations sur les valeurs booléennes sont données dans la leçon ? (Plusieurs réponses)","choices":["Elles prennent les valeurs True ou False.","True et False commencent par une majuscule en Python.","Elles peuvent prendre n'importe quelle chaîne.","En Python, leur casse est identique à celle de JavaScript."],"answer":[0,1],"explication":"La leçon précise que les booléens valent True ou False et que leurs premières lettres sont majuscules, contrairement à JavaScript."}
+  ]
+}
