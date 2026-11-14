@@ -1,0 +1,29 @@
+{
+  "generatedAt": "2026-11-13",
+  "tracks": {
+    "web": {
+      "repository": "https://github.com/TheOdinProject/curriculum",
+      "branch": "main",
+      "commit": "101703c1200cb3e8fa7bbfabb31423c26127206d",
+      "license": "CC BY-NC-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "sourceScope": [
+        "foundations/",
+        "git/foundations_git/"
+      ]
+    },
+    "python": {
+      "repository": "https://github.com/Asabeneh/30-Days-Of-Python",
+      "branch": "master",
+      "commit": "50c11a80a6e3924a7be58c89f409697e12cb4d70",
+      "license": "Aucune licence explicite dans le dépôt",
+      "sourceScope": [
+        "French/",
+        "images/",
+        "01_Day_Introduction/",
+        ".../",
+        "30_Day_Conclusions/"
+      ]
+    }
+  }
+}

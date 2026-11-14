@@ -1,0 +1,62 @@
+### Introduction
+
+Node.js (or just "Node") is a JavaScript runtime environment that allows you to run JavaScript outside of your web browser. We will need this for some exercises in the upcoming lessons. To get started, there are some required tools we need before we can install Node on your system.
+
+We're going to install it using nvm (Node Version Manager), because it makes it easy to change Node versions and upgrade Node. There is another tool called npm that we will later use to install the various libraries and tools used in JavaScript environments. It can be easy to confuse these two, so read carefully!
+
+Node is also very easy to install using nvm, so this should go quickly :)
+
+### Lesson overview
+
+This section contains a general overview of topics that you will learn in this lesson.
+
+- Install and configure nvm (Node Version Manager), Node, and npm.
+- Run the Node REPL.
+
+### Assignment
+
+<div class="lesson-content__panel" markdown="1">
+
+#### Installing nvm
+
+1. We first need to install nvm so that we can install and manage our Node installations easily. Follow the appropriate guide for the OS that you are using:
+   - [Linux](https://github.com/TheOdinProject/curriculum/tree/main/foundations/javascript_basics/installation_guides/linux.md "Linux nvm installation")
+   - [macOS](https://github.com/TheOdinProject/curriculum/tree/main/foundations/javascript_basics/installation_guides/macos.md "macOS nvm installation")
+
+#### Installing Node
+
+Now that we have nvm installed, we can use it to install Node.
+
+1. In your terminal, run:
+
+   ```bash
+   nvm install --lts
+   ```
+
+   This will install the most recent stable version of Node in "long-term support" (LTS), and you’ll see a lot of output in the terminal. If everything worked, you should see something similar to this somewhere in the lines of output (with the Xs replaced with actual numbers):
+
+   ```text
+   Downloading and installing Node vXX.xx.x...
+   ```
+
+   If not, close the terminal, re-open it and run `nvm install --lts` again. Now when you run `node -v`, you should see `vXX.xx.x` or something similar (with the Xs replaced with actual numbers).
+
+   Installing Node also installs npm alongside it. Run `npm -v` and like above you should see `XX.xx.x` or something similar.
+
+   If you see those messages, you have successfully installed Node and npm!
+
+1. Finally, we'll implement a setting introduced in npm v11.10.0 that delays the installation of newly released dependencies. Run the following command in your terminal:
+
+   ```bash
+   npm config set min-release-age=3
+   ```
+
+   This setting will prevent npm from installing dependencies that were released less than three days ago, which can help avoid issues with newly released packages that may have been compromised, and help protect us from supply chain attacks.
+
+#### Using the Node REPL
+
+For convenience, Node provides a REPL which is an interactive console that lets you run and edit your JavaScript code right in your terminal, similar to the console in the browser you used in the previous lesson. This can be quite helpful to debug or test small snippets of non-browser-related code quickly without opening the browser every time.
+
+To run the Node console, open up your terminal and run `node` on its own to open the REPL. Type `.exit` to quit the REPL.
+
+</div>

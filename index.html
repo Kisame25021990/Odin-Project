@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light" data-track="web">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ODIN — Cursus en français</title>
+  <meta name="description" content="Lecteur de cours interactif hors-ligne : The Odin Project et 30 Jours de Python, traduits en français.">
+  <meta name="theme-color" content="#f6f7f9">
+  <link rel="manifest" href="app.webmanifest">
+  <link rel="icon" href="assets/odin-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/odin-icon.svg">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#lesson">Aller au contenu</a>
+
+  <div class="app">
+    <aside class="sidebar" id="sidebar" aria-label="Navigation des leçons">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">O</span>
+        <div class="brand-text">
+          <strong>ODIN</strong>
+          <small>Cursus en français</small>
+        </div>
+      </div>
+
+      <div class="track-switch" id="track-switch" role="tablist" aria-label="Choisir un parcours"></div>
+
+      <div class="sidebar-search">
+        <input id="search" type="search" placeholder="Rechercher une leçon…" aria-label="Rechercher une leçon" autocomplete="off">
+      </div>
+
+      <nav id="nav" class="nav" aria-label="Leçons"></nav>
+
+      <div class="sidebar-footer">
+        <div class="progress-label">
+          <span id="progress-title">Progression</span>
+          <span id="progress-text">0 / 0</span>
+        </div>
+        <div class="progress" role="progressbar" aria-label="Progression du parcours" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <button class="ghost-btn" id="glossary-btn" type="button">Glossaire FR / EN</button>
+        <a class="ghost-btn" href="https://www.theodinproject.com/" target="_blank" rel="noopener">Site officiel</a>
+        <p class="credit">Contenu traduit depuis <a href="https://github.com/TheOdinProject/curriculum" target="_blank" rel="noopener">The Odin Project</a> et <a href="https://github.com/Asabeneh/30-Days-Of-Python" target="_blank" rel="noopener">30 Days of Python</a>.</p>
+      </div>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Ouvrir le menu" aria-expanded="false">Menu</button>
+        <div class="crumbs" id="crumbs">Chargement…</div>
+        <div class="topbar-actions">
+          <button class="icon-btn" id="theme-btn" type="button" aria-label="Changer de thème">Mode sombre</button>
+        </div>
+      </header>
+
+      <main id="lesson" class="lesson" tabindex="-1">
+        <div class="loading">Chargement du cursus…</div>
+      </main>
+
+      <footer class="lesson-footer">
+        <button class="nav-btn" id="prev-btn" type="button" disabled>← Précédent</button>
+        <a class="nav-btn" id="top-btn" href="#lesson">Haut de page</a>
+        <button class="nav-btn" id="next-btn" type="button" disabled>Suivant →</button>
+      </footer>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay" hidden></div>
+
+  <dialog id="glossary" class="glossary-dialog" aria-labelledby="glossary-title">
+    <div class="glossary-head">
+      <h2 id="glossary-title">Glossaire FR / EN</h2>
+      <button class="icon-btn" id="glossary-close" type="button" aria-label="Fermer le glossaire">Fermer</button>
+    </div>
+    <input id="glossary-search" type="search" placeholder="Filtrer les termes…" aria-label="Filtrer les termes du glossaire" autocomplete="off">
+    <div id="glossary-list" class="glossary-list"></div>
+  </dialog>
+
+  <script src="assets/marked.min.js"></script>
+  <script src="assets/prism.min.js"></script>
+  <script src="assets/prism-python.min.js"></script>
+  <script src="assets/prism-bash.min.js"></script>
+  <script src="assets/prism-json.min.js"></script>
+  <script src="assets/prism-markdown.min.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

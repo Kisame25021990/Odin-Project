@@ -1,0 +1,202 @@
+[
+  {
+    "fr": "HTML",
+    "en": "HyperText Markup Language",
+    "definition": "Langage de balisage qui définit la structure et le contenu d'une page web."
+  },
+  {
+    "fr": "CSS",
+    "en": "Cascading Style Sheets",
+    "definition": "Langage de style qui met en forme et positionne les éléments HTML."
+  },
+  {
+    "fr": "JavaScript",
+    "en": "JavaScript",
+    "definition": "Langage de programmation qui ajoute de la logique et de l'interactivité aux pages web."
+  },
+  {
+    "fr": "balise",
+    "en": "tag",
+    "definition": "Mot-clé entouré de chevrons qui délimite le début ou la fin d'un élément HTML, par ex. <p> et </p>."
+  },
+  {
+    "fr": "élément",
+    "en": "element",
+    "definition": "Ensemble formé d'une balise d'ouverture, d'un contenu et d'une balise de fermeture."
+  },
+  {
+    "fr": "attribut",
+    "en": "attribute",
+    "definition": "Information supplémentaire placée dans la balise d'ouverture d'un élément, par ex. href ou src."
+  },
+  {
+    "fr": "élément vide",
+    "en": "void element",
+    "definition": "Élément sans contenu ni balise de fermeture, comme <br> ou <img>."
+  },
+  {
+    "fr": "balise auto-fermante",
+    "en": "self-closing tag",
+    "definition": "Élément vide terminé par une barre oblique, comme <br /> ; usage historique déconseillé."
+  },
+  {
+    "fr": "élément racine",
+    "en": "root element",
+    "definition": "Élément qui contient tous les autres éléments du document ; en HTML, c'est <html>."
+  },
+  {
+    "fr": "en-tête du document",
+    "en": "head element",
+    "definition": "Section contenant les métadonnées de la page (encodage, titre, styles, scripts)."
+  },
+  {
+    "fr": "corps du document",
+    "en": "body element",
+    "definition": "Section contenant tout le contenu visible par l'utilisateur."
+  },
+  {
+    "fr": "déclaration de type de document",
+    "en": "doctype",
+    "definition": "Première ligne d'une page HTML qui indique au navigateur la version de HTML à utiliser."
+  },
+  {
+    "fr": "jeu de caractères",
+    "en": "charset",
+    "definition": "Encodage qui permet d'afficher correctement les caractères spéciaux ; UTF-8 est la norme."
+  },
+  {
+    "fr": "accessibilité",
+    "en": "accessibility",
+    "definition": "Conception de sites utilisables par tous, y compris les personnes en situation de handicap."
+  },
+  {
+    "fr": "HTML sémantique",
+    "en": "semantic HTML",
+    "definition": "Utilisation de balises qui décrivent le sens du contenu (par ex. <strong>, <em>)."
+  },
+  {
+    "fr": "imbrication",
+    "en": "nesting",
+    "definition": "Fait de placer des éléments à l'intérieur d'autres éléments."
+  },
+  {
+    "fr": "parent / enfant",
+    "en": "parent / child",
+    "definition": "Relation entre un élément conteneur (parent) et les éléments qu'il contient (enfants)."
+  },
+  {
+    "fr": "frère et sœur",
+    "en": "sibling",
+    "definition": "Éléments situés au même niveau d'imbrication sous un même parent."
+  },
+  {
+    "fr": "liste non ordonnée",
+    "en": "unordered list",
+    "definition": "Liste à puces créée avec <ul> ; l'ordre des éléments n'a pas d'importance."
+  },
+  {
+    "fr": "liste ordonnée",
+    "en": "ordered list",
+    "definition": "Liste numérotée créée avec <ol> ; l'ordre des éléments compte."
+  },
+  {
+    "fr": "élément de liste",
+    "en": "list item",
+    "definition": "Élément <li> représentant un item dans une liste <ul> ou <ol>."
+  },
+  {
+    "fr": "élément d'ancrage",
+    "en": "anchor element",
+    "definition": "Élément <a> qui crée un lien vers une autre ressource."
+  },
+  {
+    "fr": "référence hypertexte",
+    "en": "href",
+    "definition": "Attribut d'un lien qui indique sa destination."
+  },
+  {
+    "fr": "cible",
+    "en": "target",
+    "definition": "Attribut qui indique où ouvrir un lien ; _blank ouvre un nouvel onglet."
+  },
+  {
+    "fr": "relation",
+    "en": "rel",
+    "definition": "Attribut décrivant la relation entre la page et le document lié (noopener, noreferrer)."
+  },
+  {
+    "fr": "lien absolu",
+    "en": "absolute link",
+    "definition": "Lien complet incluant le schéma et le domaine, par ex. https://site.com/page."
+  },
+  {
+    "fr": "lien relatif",
+    "en": "relative link",
+    "definition": "Lien vers une page du même site, défini relativement au fichier courant."
+  },
+  {
+    "fr": "chemin",
+    "en": "path",
+    "definition": "Emplacement d'un fichier ou d'une ressource dans une arborescence."
+  },
+  {
+    "fr": "dossier parent",
+    "en": "parent directory",
+    "definition": "Dossier situé un niveau au-dessus ; on y accède avec ../."
+  },
+  {
+    "fr": "texte alternatif",
+    "en": "alt / alternative text",
+    "definition": "Description d'une image pour l'accessibilité et en cas d'échec de chargement."
+  },
+  {
+    "fr": "design responsive",
+    "en": "responsive design",
+    "definition": "Conception d'interfaces qui s'adaptent aux différentes tailles d'écran."
+  },
+  {
+    "fr": "validateur",
+    "en": "validator",
+    "definition": "Outil qui vérifie la conformité du code HTML aux spécifications."
+  },
+  {
+    "fr": "commit",
+    "en": "commit",
+    "definition": "Enregistrement d'un ensemble de modifications dans l'historique Git."
+  },
+  {
+    "fr": "sujet",
+    "en": "subject",
+    "definition": "Première ligne d'un message de commit, résumant brièvement le changement."
+  },
+  {
+    "fr": "corps",
+    "en": "body",
+    "definition": "Partie détaillée d'un message de commit expliquant le pourquoi du changement."
+  },
+  {
+    "fr": "dépôt",
+    "en": "repository / repo",
+    "definition": "Espace de stockage versionné d'un projet, local ou distant (GitHub)."
+  },
+  {
+    "fr": "cloner",
+    "en": "clone",
+    "definition": "Copier un dépôt distant sur sa machine locale avec git clone."
+  },
+  {
+    "fr": "pousser",
+    "en": "push",
+    "definition": "Envoyer ses commits locaux vers un dépôt distant avec git push."
+  },
+  {
+    "fr": "instantané",
+    "en": "snapshot",
+    "definition": "État du code à un moment donné, conservé par un commit."
+  },
+  {
+    "fr": "déployer / publier",
+    "en": "deploy / publish",
+    "definition": "Mettre un site en ligne, par exemple avec GitHub Pages."
+  }
+]

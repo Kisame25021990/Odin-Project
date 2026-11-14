@@ -1,0 +1,656 @@
+{
+  "modules": [
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "titleEn": "Introduction"
+    },
+    {
+      "id": "installations",
+      "title": "Installations",
+      "titleEn": "Installations"
+    },
+    {
+      "id": "html-foundations",
+      "title": "Fondations HTML",
+      "titleEn": "HTML Foundations"
+    },
+    {
+      "id": "css-foundations",
+      "title": "Fondations CSS",
+      "titleEn": "CSS Foundations"
+    },
+    {
+      "id": "flexbox",
+      "title": "Flexbox",
+      "titleEn": "Flexbox"
+    },
+    {
+      "id": "javascript-basics",
+      "title": "Bases de JavaScript",
+      "titleEn": "JavaScript Basics"
+    },
+    {
+      "id": "git-foundations",
+      "title": "Fondations Git",
+      "titleEn": "Git Foundations"
+    },
+    {
+      "id": "conclusion",
+      "title": "Conclusion",
+      "titleEn": "Conclusion"
+    }
+  ],
+  "lessons": [
+    {
+      "module": "introduction",
+      "slug": "introduction-to-web-development",
+      "title": "Introduction au développement web",
+      "titleEn": "Introduction to Web Development",
+      "type": "lesson",
+      "duration": "15 min",
+      "source": "sources/odin/foundations/introduction/introduction_to_web_development.md",
+      "file": "content/web/introduction/introduction-to-web-development.md"
+    },
+    {
+      "module": "introduction",
+      "slug": "how-this-course-will-work",
+      "title": "Comment fonctionne ce cours",
+      "titleEn": "How This Course Will Work",
+      "type": "lesson",
+      "duration": "10 min",
+      "source": "sources/odin/foundations/introduction/how_this_course_will_work.md",
+      "file": "content/web/introduction/how-this-course-will-work.md"
+    },
+    {
+      "module": "introduction",
+      "slug": "motivation-and-mindset",
+      "title": "Motivation et état d'esprit",
+      "titleEn": "Motivation and Mindset",
+      "type": "lesson",
+      "duration": "15 min",
+      "source": "sources/odin/foundations/introduction/motivation_and_mindset.md",
+      "file": "content/web/introduction/motivation-and-mindset.md"
+    },
+    {
+      "module": "introduction",
+      "slug": "asking-for-help",
+      "title": "Demander de l'aide",
+      "titleEn": "Asking For Help",
+      "type": "lesson",
+      "duration": "10 min",
+      "source": "sources/odin/foundations/introduction/asking_for_help.md",
+      "file": "content/web/introduction/asking-for-help.md"
+    },
+    {
+      "module": "introduction",
+      "slug": "join-the-odin-community",
+      "title": "Rejoindre la communauté ODIN",
+      "titleEn": "Join the Odin Community",
+      "type": "lesson",
+      "duration": "10 min",
+      "source": "sources/odin/foundations/introduction/join_the_odin_community.md",
+      "file": "content/web/introduction/join-the-odin-community.md"
+    },
+    {
+      "module": "installations",
+      "slug": "installations",
+      "title": "Installations",
+      "titleEn": "Installations",
+      "type": "lesson",
+      "duration": "10 min",
+      "source": "sources/odin/foundations/installations/installations.md",
+      "file": "content/web/installations/installations.md"
+    },
+    {
+      "module": "installations",
+      "slug": "how-does-the-web-work",
+      "title": "Comment fonctionne le web",
+      "titleEn": "How Does the Web Work?",
+      "type": "lesson",
+      "duration": "15 min",
+      "source": "sources/odin/foundations/installations/how_does_the_web_work.md",
+      "file": "content/web/installations/how-does-the-web-work.md"
+    },
+    {
+      "module": "installations",
+      "slug": "command-line-basics",
+      "title": "Les bases de la ligne de commande",
+      "titleEn": "Command Line Basics",
+      "type": "lesson",
+      "duration": "20 min",
+      "source": "sources/odin/foundations/installations/command_line_basics.md",
+      "file": "content/web/installations/command-line-basics.md"
+    },
+    {
+      "module": "installations",
+      "slug": "text-editors",
+      "title": "Les éditeurs de texte",
+      "titleEn": "Text Editors",
+      "type": "lesson",
+      "duration": "15 min",
+      "source": "sources/odin/foundations/installations/text_editors.md",
+      "file": "content/web/installations/text-editors.md"
+    },
+    {
+      "module": "installations",
+      "slug": "setting-up-git",
+      "title": "Configurer Git",
+      "titleEn": "Setting Up Git",
+      "type": "lesson",
+      "duration": "20 min",
+      "source": "sources/odin/foundations/installations/setting_up_git.md",
+      "file": "content/web/installations/setting-up-git.md"
+    },
+    {
+      "module": "installations",
+      "slug": "guide-chrome-linux",
+      "title": "Guide : installer Chrome sur Linux",
+      "titleEn": "Guide: Install Chrome on Linux",
+      "type": "lesson",
+      "duration": "10 min",
+      "source": "sources/odin/foundations/installations/installation_guides/chrome/linux.md",
+      "file": "content/web/installations/guide-chrome-linux.md"
+    },
+    {
+      "module": "installations",
+      "slug": "guide-chrome-macos",
+      "title": "Guide : installer Chrome sur macOS",
+      "titleEn": "Guide: Install Chrome on macOS",
+      "type": "lesson",
+      "duration": "10 min",
+      "source": "sources/odin/foundations/installations/installation_guides/chrome/macos.md",
+      "file": "content/web/installations/guide-chrome-macos.md"
+    },
+    {
+      "module": "installations",
+      "slug": "guide-chrome-wsl2",
+      "title": "Guide : installer Chrome pour WSL2",
+      "titleEn": "Guide: Install Chrome for WSL2",
+      "type": "lesson",
+      "duration": "10 min",
+      "source": "sources/odin/foundations/installations/installation_guides/chrome/wsl2.md",
+      "file": "content/web/installations/guide-chrome-wsl2.md"
+    },
+    {
+      "module": "installations",
+      "slug": "guide-git-chromeos",
+      "title": "Guide : configurer Git sur ChromeOS",
+      "titleEn": "Guide: Setting up Git in ChromeOS",
+      "type": "lesson",
+      "duration": "15 min",
+      "source": "sources/odin/foundations/installations/installation_guides/git/chromeos.md",
+      "file": "content/web/installations/guide-git-chromeos.md"
+    },
+    {
+      "module": "installations",
+      "slug": "guide-git-linux",
+      "title": "Guide : configurer Git sur Linux",
+      "titleEn": "Guide: Setting up Git in Linux",
+      "type": "lesson",
+      "duration": "15 min",
+      "source": "sources/odin/foundations/installations/installation_guides/git/linux.md",
+      "file": "content/web/installations/guide-git-linux.md"
+    },
+    {
+      "module": "installations",
+      "slug": "guide-git-macos",
+      "title": "Guide : configurer Git sur macOS",
+      "titleEn": "Guide: Setting up Git in macOS",
+      "type": "lesson",
+      "duration": "15 min",
+      "source": "sources/odin/foundations/installations/installation_guides/git/macos.md",
+      "file": "content/web/installations/guide-git-macos.md"
+    },
+    {
+      "module": "installations",
+      "slug": "guide-linux-chromeos",
+      "title": "Guide : configuration ChromeOS",
+      "titleEn": "Guide: ChromeOS setup",
+      "type": "lesson",
+      "duration": "20 min",
+      "source": "sources/odin/foundations/installations/installation_guides/linux/chromeos.md",
+      "file": "content/web/installations/guide-linux-chromeos.md"
+    },
+    {
+      "module": "installations",
+      "slug": "guide-linux-dual-boot",
+      "title": "Guide : double démarrage Ubuntu et Windows",
+      "titleEn": "Guide: Dual-boot Ubuntu and Windows",
+      "type": "lesson",
+      "duration": "25 min",
+      "source": "sources/odin/foundations/installations/installation_guides/linux/dual_boot.md",
+      "file": "content/web/installations/guide-linux-dual-boot.md"
+    },
+    {
+      "module": "installations",
+      "slug": "guide-linux-virtual-machine",
+      "title": "Guide : installer une machine virtuelle",
+      "titleEn": "Guide: Virtual Machine installation",
+      "type": "lesson",
+      "duration": "25 min",
+      "source": "sources/odin/foundations/installations/installation_guides/linux/virtual_machine.md",
+      "file": "content/web/installations/guide-linux-virtual-machine.md"
+    },
+    {
+      "module": "installations",
+      "slug": "guide-linux-wsl2",
+      "title": "Guide : configuration WSL2",
+      "titleEn": "Guide: WSL2 setup",
+      "type": "lesson",
+      "duration": "20 min",
+      "source": "sources/odin/foundations/installations/installation_guides/linux/wsl2.md",
+      "file": "content/web/installations/guide-linux-wsl2.md"
+    },
+    {
+      "module": "installations",
+      "slug": "guide-text-editors-linux",
+      "title": "Guide : installer VSCode sur Linux",
+      "titleEn": "Guide: Install VSCode on Linux",
+      "type": "lesson",
+      "duration": "10 min",
+      "source": "sources/odin/foundations/installations/installation_guides/text_editors/linux.md",
+      "file": "content/web/installations/guide-text-editors-linux.md"
+    },
+    {
+      "module": "installations",
+      "slug": "guide-text-editors-macos",
+      "title": "Guide : installer VSCode sur macOS",
+      "titleEn": "Guide: Install VSCode on macOS",
+      "type": "lesson",
+      "duration": "10 min",
+      "source": "sources/odin/foundations/installations/installation_guides/text_editors/macos.md",
+      "file": "content/web/installations/guide-text-editors-macos.md"
+    },
+    {
+      "module": "installations",
+      "slug": "guide-text-editors-wsl2",
+      "title": "Guide : installer VSCode sur WSL2",
+      "titleEn": "Guide: Install VSCode on WSL2",
+      "type": "lesson",
+      "duration": "10 min",
+      "source": "sources/odin/foundations/installations/installation_guides/text_editors/wsl2.md",
+      "file": "content/web/installations/guide-text-editors-wsl2.md"
+    },
+    {
+      "module": "html-foundations",
+      "slug": "intro-to-html-css",
+      "title": "Introduction au HTML et au CSS",
+      "titleEn": "Introduction to HTML and CSS",
+      "type": "lesson",
+      "duration": "5 min",
+      "source": "sources/odin/foundations/html_css/html_foundations/intro_to_html_css.md",
+      "file": "content/web/html-foundations/intro-to-html-css.md"
+    },
+    {
+      "module": "html-foundations",
+      "slug": "elements-and-tags",
+      "title": "Éléments et balises",
+      "titleEn": "Elements and Tags",
+      "type": "lesson",
+      "duration": "10 min",
+      "source": "sources/odin/foundations/html_css/html_foundations/elements_and_tags.md",
+      "file": "content/web/html-foundations/elements-and-tags.md"
+    },
+    {
+      "module": "html-foundations",
+      "slug": "html-boilerplate",
+      "title": "Le squelette HTML",
+      "titleEn": "HTML Boilerplate",
+      "type": "lesson",
+      "duration": "15 min",
+      "source": "sources/odin/foundations/html_css/html_foundations/html_boilerplate.md",
+      "file": "content/web/html-foundations/html-boilerplate.md"
+    },
+    {
+      "module": "html-foundations",
+      "slug": "working-with-text",
+      "title": "Travailler avec le texte",
+      "titleEn": "Working with Text",
+      "type": "lesson",
+      "duration": "15 min",
+      "source": "sources/odin/foundations/html_css/html_foundations/working_with_text.md",
+      "file": "content/web/html-foundations/working-with-text.md"
+    },
+    {
+      "module": "html-foundations",
+      "slug": "lists",
+      "title": "Les listes",
+      "titleEn": "Lists",
+      "type": "lesson",
+      "duration": "10 min",
+      "source": "sources/odin/foundations/html_css/html_foundations/lists.md",
+      "file": "content/web/html-foundations/lists.md"
+    },
+    {
+      "module": "html-foundations",
+      "slug": "links-and-images",
+      "title": "Liens et images",
+      "titleEn": "Links and Images",
+      "type": "lesson",
+      "duration": "25 min",
+      "source": "sources/odin/foundations/html_css/html_foundations/links_and_images.md",
+      "file": "content/web/html-foundations/links-and-images.md"
+    },
+    {
+      "module": "html-foundations",
+      "slug": "project-recipes",
+      "title": "Projet : Recettes",
+      "titleEn": "Project: Recipes",
+      "type": "project",
+      "duration": "1–2 h",
+      "source": "sources/odin/foundations/html_css/html_foundations/project_recipes.md",
+      "file": "content/web/html-foundations/project-recipes.md"
+    },
+    {
+      "module": "css-foundations",
+      "slug": "intro-to-css",
+      "title": "Introduction au CSS",
+      "titleEn": "Intro to CSS",
+      "type": "lesson",
+      "duration": "15 min",
+      "source": "sources/odin/foundations/html_css/css_foundations/intro_to_css.md",
+      "file": "content/web/css-foundations/intro-to-css.md"
+    },
+    {
+      "module": "css-foundations",
+      "slug": "the-cascade",
+      "title": "La cascade",
+      "titleEn": "The Cascade",
+      "type": "lesson",
+      "duration": "20 min",
+      "source": "sources/odin/foundations/html_css/css_foundations/the_cascade.md",
+      "file": "content/web/css-foundations/the-cascade.md"
+    },
+    {
+      "module": "css-foundations",
+      "slug": "inspecting-html-and-css",
+      "title": "Inspecter le HTML et le CSS",
+      "titleEn": "Inspecting HTML and CSS",
+      "type": "lesson",
+      "duration": "15 min",
+      "source": "sources/odin/foundations/html_css/css_foundations/inspecting_html_and_css.md",
+      "file": "content/web/css-foundations/inspecting-html-and-css.md"
+    },
+    {
+      "module": "css-foundations",
+      "slug": "the-box-model",
+      "title": "Le modèle de boîte",
+      "titleEn": "The Box Model",
+      "type": "lesson",
+      "duration": "20 min",
+      "source": "sources/odin/foundations/html_css/css_foundations/the_box_model.md",
+      "file": "content/web/css-foundations/the-box-model.md"
+    },
+    {
+      "module": "css-foundations",
+      "slug": "block-and-inline",
+      "title": "Blocs et éléments en ligne",
+      "titleEn": "Block and Inline",
+      "type": "lesson",
+      "duration": "15 min",
+      "source": "sources/odin/foundations/html_css/css_foundations/block_and_inline.md",
+      "file": "content/web/css-foundations/block-and-inline.md"
+    },
+    {
+      "module": "flexbox",
+      "slug": "flexbox-intro",
+      "title": "Introduction à Flexbox",
+      "titleEn": "Flexbox Intro",
+      "type": "lesson",
+      "duration": "15 min",
+      "source": "sources/odin/foundations/html_css/flexbox/flexbox_intro.md",
+      "file": "content/web/flexbox/flexbox-intro.md"
+    },
+    {
+      "module": "flexbox",
+      "slug": "flexbox-axes",
+      "title": "Les axes Flexbox",
+      "titleEn": "Flexbox Axes",
+      "type": "lesson",
+      "duration": "15 min",
+      "source": "sources/odin/foundations/html_css/flexbox/flexbox_axes.md",
+      "file": "content/web/flexbox/flexbox-axes.md"
+    },
+    {
+      "module": "flexbox",
+      "slug": "flexbox-alignment",
+      "title": "L'alignement Flexbox",
+      "titleEn": "Flexbox Alignment",
+      "type": "lesson",
+      "duration": "20 min",
+      "source": "sources/odin/foundations/html_css/flexbox/flexbox_alignment.md",
+      "file": "content/web/flexbox/flexbox-alignment.md"
+    },
+    {
+      "module": "flexbox",
+      "slug": "flexbox-growing-and-shrinking",
+      "title": "Croissance et rétrécissement Flexbox",
+      "titleEn": "Flexbox Growing and Shrinking",
+      "type": "lesson",
+      "duration": "20 min",
+      "source": "sources/odin/foundations/html_css/flexbox/flexbox_growing_and_shrinking.md",
+      "file": "content/web/flexbox/flexbox-growing-and-shrinking.md"
+    },
+    {
+      "module": "flexbox",
+      "slug": "project-landing-page",
+      "title": "Projet : page d'atterrissage",
+      "titleEn": "Project: Landing Page",
+      "type": "project",
+      "duration": "2–4 h",
+      "source": "sources/odin/foundations/html_css/flexbox/project_landing_page.md",
+      "file": "content/web/flexbox/project-landing-page.md"
+    },
+    {
+      "module": "javascript-basics",
+      "slug": "variables-and-operators",
+      "title": "Variables et opérateurs",
+      "titleEn": "Variables and Operators",
+      "type": "lesson",
+      "duration": "20 min",
+      "source": "sources/odin/foundations/javascript_basics/variables_and_operators.md",
+      "file": "content/web/javascript-basics/variables-and-operators.md"
+    },
+    {
+      "module": "javascript-basics",
+      "slug": "data-types-and-conditionals",
+      "title": "Types de données et conditions",
+      "titleEn": "Data Types and Conditionals",
+      "type": "lesson",
+      "duration": "25 min",
+      "source": "sources/odin/foundations/javascript_basics/data_types_and_conditionals.md",
+      "file": "content/web/javascript-basics/data-types-and-conditionals.md"
+    },
+    {
+      "module": "javascript-basics",
+      "slug": "function-basics",
+      "title": "Les bases des fonctions",
+      "titleEn": "Function Basics",
+      "type": "lesson",
+      "duration": "20 min",
+      "source": "sources/odin/foundations/javascript_basics/function_basics.md",
+      "file": "content/web/javascript-basics/function-basics.md"
+    },
+    {
+      "module": "javascript-basics",
+      "slug": "understanding-errors",
+      "title": "Comprendre les erreurs",
+      "titleEn": "Understanding Errors",
+      "type": "lesson",
+      "duration": "15 min",
+      "source": "sources/odin/foundations/javascript_basics/understanding_errors.md",
+      "file": "content/web/javascript-basics/understanding-errors.md"
+    },
+    {
+      "module": "javascript-basics",
+      "slug": "clean-code",
+      "title": "Code propre",
+      "titleEn": "Clean Code",
+      "type": "lesson",
+      "duration": "15 min",
+      "source": "sources/odin/foundations/javascript_basics/clean_code.md",
+      "file": "content/web/javascript-basics/clean-code.md"
+    },
+    {
+      "module": "javascript-basics",
+      "slug": "problem-solving",
+      "title": "Résolution de problèmes",
+      "titleEn": "Problem Solving",
+      "type": "lesson",
+      "duration": "30 min",
+      "source": "sources/odin/foundations/javascript_basics/problem_solving.md",
+      "file": "content/web/javascript-basics/problem-solving.md"
+    },
+    {
+      "module": "javascript-basics",
+      "slug": "loops-and-arrays",
+      "title": "Boucles et tableaux",
+      "titleEn": "Loops and Arrays",
+      "type": "lesson",
+      "duration": "25 min",
+      "source": "sources/odin/foundations/javascript_basics/loops_and_arrays.md",
+      "file": "content/web/javascript-basics/loops-and-arrays.md"
+    },
+    {
+      "module": "javascript-basics",
+      "slug": "object-basics",
+      "title": "Les bases des objets",
+      "titleEn": "Object Basics",
+      "type": "lesson",
+      "duration": "20 min",
+      "source": "sources/odin/foundations/javascript_basics/object_basics.md",
+      "file": "content/web/javascript-basics/object-basics.md"
+    },
+    {
+      "module": "javascript-basics",
+      "slug": "DOM-manipulation-and-events",
+      "title": "Manipulation du DOM et événements",
+      "titleEn": "DOM Manipulation and Events",
+      "type": "lesson",
+      "duration": "30 min",
+      "source": "sources/odin/foundations/javascript_basics/DOM_manipulation_and_events.md",
+      "file": "content/web/javascript-basics/DOM-manipulation-and-events.md"
+    },
+    {
+      "module": "javascript-basics",
+      "slug": "installing-nodejs",
+      "title": "Installer Node.js",
+      "titleEn": "Installing Node.js",
+      "type": "lesson",
+      "duration": "15 min",
+      "source": "sources/odin/foundations/javascript_basics/installing_nodejs.md",
+      "file": "content/web/javascript-basics/installing-nodejs.md"
+    },
+    {
+      "module": "javascript-basics",
+      "slug": "javascript-developer-tools",
+      "title": "Les outils du développeur JavaScript",
+      "titleEn": "JavaScript Developer Tools",
+      "type": "lesson",
+      "duration": "15 min",
+      "source": "sources/odin/foundations/javascript_basics/javascript_developer_tools.md",
+      "file": "content/web/javascript-basics/javascript-developer-tools.md"
+    },
+    {
+      "module": "javascript-basics",
+      "slug": "guide-nvm-linux",
+      "title": "Guide : installer nvm sur Linux",
+      "titleEn": "Guide: Install nvm on Linux",
+      "type": "lesson",
+      "duration": "10 min",
+      "source": "sources/odin/foundations/javascript_basics/installation_guides/linux.md",
+      "file": "content/web/javascript-basics/guide-nvm-linux.md"
+    },
+    {
+      "module": "javascript-basics",
+      "slug": "guide-nvm-macos",
+      "title": "Guide : installer nvm sur macOS",
+      "titleEn": "Guide: Install nvm on macOS",
+      "type": "lesson",
+      "duration": "10 min",
+      "source": "sources/odin/foundations/javascript_basics/installation_guides/macos.md",
+      "file": "content/web/javascript-basics/guide-nvm-macos.md"
+    },
+    {
+      "module": "javascript-basics",
+      "slug": "project-rock-paper-scissors",
+      "title": "Projet : pierre-papier-ciseaux",
+      "titleEn": "Project: Rock Paper Scissors",
+      "type": "project",
+      "duration": "1–2 h",
+      "source": "sources/odin/foundations/javascript_basics/project_rock_paper_scissors.md",
+      "file": "content/web/javascript-basics/project-rock-paper-scissors.md"
+    },
+    {
+      "module": "javascript-basics",
+      "slug": "revisiting-rock-paper-scissors",
+      "title": "Revoir pierre-papier-ciseaux",
+      "titleEn": "Revisiting Rock Paper Scissors",
+      "type": "lesson",
+      "duration": "30 min",
+      "source": "sources/odin/foundations/javascript_basics/revisiting_rock_paper_scissors.md",
+      "file": "content/web/javascript-basics/revisiting-rock-paper-scissors.md"
+    },
+    {
+      "module": "javascript-basics",
+      "slug": "project-calculator",
+      "title": "Projet : calculatrice",
+      "titleEn": "Project: Calculator",
+      "type": "project",
+      "duration": "2–4 h",
+      "source": "sources/odin/foundations/javascript_basics/project_calculator.md",
+      "file": "content/web/javascript-basics/project-calculator.md"
+    },
+    {
+      "module": "javascript-basics",
+      "slug": "project-etch-a-sketch",
+      "title": "Projet : Etch-a-Sketch",
+      "titleEn": "Project: Etch-a-Sketch",
+      "type": "project",
+      "duration": "2–4 h",
+      "source": "sources/odin/foundations/javascript_basics/project_etch_a_sketch.md",
+      "file": "content/web/javascript-basics/project-etch-a-sketch.md"
+    },
+    {
+      "module": "git-foundations",
+      "slug": "introduction-to-git",
+      "title": "Introduction à Git",
+      "titleEn": "Introduction to Git",
+      "type": "lesson",
+      "duration": "20 min",
+      "source": "sources/odin/git/foundations_git/introduction_to_git.md",
+      "file": "content/web/git-foundations/introduction-to-git.md"
+    },
+    {
+      "module": "git-foundations",
+      "slug": "git-basics",
+      "title": "Les bases de Git",
+      "titleEn": "Git Basics",
+      "type": "lesson",
+      "duration": "25 min",
+      "source": "sources/odin/git/foundations_git/git_basics.md",
+      "file": "content/web/git-foundations/git-basics.md"
+    },
+    {
+      "module": "git-foundations",
+      "slug": "commit-messages",
+      "title": "Les messages de commit",
+      "titleEn": "Commit Messages",
+      "type": "lesson",
+      "duration": "10 min",
+      "source": "sources/odin/git/foundations_git/commit_messages.md",
+      "file": "content/web/git-foundations/commit-messages.md"
+    },
+    {
+      "module": "conclusion",
+      "slug": "conclusion",
+      "title": "Conclusion",
+      "titleEn": "Conclusion",
+      "type": "lesson",
+      "duration": "10 min",
+      "source": "sources/odin/foundations/tying_it_all_together/conclusion.md",
+      "file": "content/web/conclusion/conclusion.md"
+    }
+  ]
+}

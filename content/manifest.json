@@ -1,0 +1,967 @@
+{
+  "appTitle": "ODIN — Cursus en français",
+  "version": "2.0.0",
+  "tracks": [
+    {
+      "id": "web",
+      "title": "Développement Web",
+      "titleEn": "Web Development",
+      "shortTitle": "Web",
+      "description": "Parcours Foundations de The Odin Project, traduit en français.",
+      "source": "https://github.com/TheOdinProject/curriculum",
+      "license": "CC BY-NC-SA 4.0",
+      "modules": [
+        {
+          "id": "introduction",
+          "title": "Introduction",
+          "titleEn": "Introduction",
+          "description": "Découvrir le développement web, la méthode de travail et la communauté.",
+          "lessons": [
+            {
+              "id": "introduction-to-web-development",
+              "title": "Introduction au développement web",
+              "titleEn": "Introduction to Web Development",
+              "type": "lesson",
+              "duration": "15 min",
+              "file": "content/web/introduction/introduction-to-web-development.md",
+              "source": "sources/odin/foundations/introduction/introduction_to_web_development.md"
+            },
+            {
+              "id": "how-this-course-will-work",
+              "title": "Comment fonctionne ce cours",
+              "titleEn": "How This Course Will Work",
+              "type": "lesson",
+              "duration": "10 min",
+              "file": "content/web/introduction/how-this-course-will-work.md",
+              "source": "sources/odin/foundations/introduction/how_this_course_will_work.md"
+            },
+            {
+              "id": "motivation-and-mindset",
+              "title": "Motivation et état d'esprit",
+              "titleEn": "Motivation and Mindset",
+              "type": "lesson",
+              "duration": "15 min",
+              "file": "content/web/introduction/motivation-and-mindset.md",
+              "source": "sources/odin/foundations/introduction/motivation_and_mindset.md"
+            },
+            {
+              "id": "asking-for-help",
+              "title": "Demander de l'aide",
+              "titleEn": "Asking For Help",
+              "type": "lesson",
+              "duration": "10 min",
+              "file": "content/web/introduction/asking-for-help.md",
+              "source": "sources/odin/foundations/introduction/asking_for_help.md"
+            },
+            {
+              "id": "join-the-odin-community",
+              "title": "Rejoindre la communauté ODIN",
+              "titleEn": "Join the Odin Community",
+              "type": "lesson",
+              "duration": "10 min",
+              "file": "content/web/introduction/join-the-odin-community.md",
+              "source": "sources/odin/foundations/introduction/join_the_odin_community.md"
+            }
+          ]
+        },
+        {
+          "id": "installations",
+          "title": "Installations",
+          "titleEn": "Installations",
+          "description": "Installer et configurer l'environnement de développement sur Linux, macOS, Windows ou WSL2.",
+          "lessons": [
+            {
+              "id": "installations",
+              "title": "Installations",
+              "titleEn": "Installations",
+              "type": "lesson",
+              "duration": "10 min",
+              "file": "content/web/installations/installations.md",
+              "source": "sources/odin/foundations/installations/installations.md"
+            },
+            {
+              "id": "how-does-the-web-work",
+              "title": "Comment fonctionne le web",
+              "titleEn": "How Does the Web Work?",
+              "type": "lesson",
+              "duration": "15 min",
+              "file": "content/web/installations/how-does-the-web-work.md",
+              "source": "sources/odin/foundations/installations/how_does_the_web_work.md"
+            },
+            {
+              "id": "command-line-basics",
+              "title": "Les bases de la ligne de commande",
+              "titleEn": "Command Line Basics",
+              "type": "lesson",
+              "duration": "20 min",
+              "file": "content/web/installations/command-line-basics.md",
+              "source": "sources/odin/foundations/installations/command_line_basics.md"
+            },
+            {
+              "id": "text-editors",
+              "title": "Les éditeurs de texte",
+              "titleEn": "Text Editors",
+              "type": "lesson",
+              "duration": "15 min",
+              "file": "content/web/installations/text-editors.md",
+              "source": "sources/odin/foundations/installations/text_editors.md"
+            },
+            {
+              "id": "setting-up-git",
+              "title": "Configurer Git",
+              "titleEn": "Setting Up Git",
+              "type": "lesson",
+              "duration": "20 min",
+              "file": "content/web/installations/setting-up-git.md",
+              "source": "sources/odin/foundations/installations/setting_up_git.md"
+            },
+            {
+              "id": "guide-chrome-linux",
+              "title": "Guide : installer Chrome sur Linux",
+              "titleEn": "Guide: Install Chrome on Linux",
+              "type": "lesson",
+              "duration": "10 min",
+              "file": "content/web/installations/guide-chrome-linux.md",
+              "source": "sources/odin/foundations/installations/installation_guides/chrome/linux.md"
+            },
+            {
+              "id": "guide-chrome-macos",
+              "title": "Guide : installer Chrome sur macOS",
+              "titleEn": "Guide: Install Chrome on macOS",
+              "type": "lesson",
+              "duration": "10 min",
+              "file": "content/web/installations/guide-chrome-macos.md",
+              "source": "sources/odin/foundations/installations/installation_guides/chrome/macos.md"
+            },
+            {
+              "id": "guide-chrome-wsl2",
+              "title": "Guide : installer Chrome pour WSL2",
+              "titleEn": "Guide: Install Chrome for WSL2",
+              "type": "lesson",
+              "duration": "10 min",
+              "file": "content/web/installations/guide-chrome-wsl2.md",
+              "source": "sources/odin/foundations/installations/installation_guides/chrome/wsl2.md"
+            },
+            {
+              "id": "guide-git-chromeos",
+              "title": "Guide : configurer Git sur ChromeOS",
+              "titleEn": "Guide: Setting up Git in ChromeOS",
+              "type": "lesson",
+              "duration": "15 min",
+              "file": "content/web/installations/guide-git-chromeos.md",
+              "source": "sources/odin/foundations/installations/installation_guides/git/chromeos.md"
+            },
+            {
+              "id": "guide-git-linux",
+              "title": "Guide : configurer Git sur Linux",
+              "titleEn": "Guide: Setting up Git in Linux",
+              "type": "lesson",
+              "duration": "15 min",
+              "file": "content/web/installations/guide-git-linux.md",
+              "source": "sources/odin/foundations/installations/installation_guides/git/linux.md"
+            },
+            {
+              "id": "guide-git-macos",
+              "title": "Guide : configurer Git sur macOS",
+              "titleEn": "Guide: Setting up Git in macOS",
+              "type": "lesson",
+              "duration": "15 min",
+              "file": "content/web/installations/guide-git-macos.md",
+              "source": "sources/odin/foundations/installations/installation_guides/git/macos.md"
+            },
+            {
+              "id": "guide-linux-chromeos",
+              "title": "Guide : configuration ChromeOS",
+              "titleEn": "Guide: ChromeOS setup",
+              "type": "lesson",
+              "duration": "20 min",
+              "file": "content/web/installations/guide-linux-chromeos.md",
+              "source": "sources/odin/foundations/installations/installation_guides/linux/chromeos.md"
+            },
+            {
+              "id": "guide-linux-dual-boot",
+              "title": "Guide : double démarrage Ubuntu et Windows",
+              "titleEn": "Guide: Dual-boot Ubuntu and Windows",
+              "type": "lesson",
+              "duration": "25 min",
+              "file": "content/web/installations/guide-linux-dual-boot.md",
+              "source": "sources/odin/foundations/installations/installation_guides/linux/dual_boot.md"
+            },
+            {
+              "id": "guide-linux-wsl2",
+              "title": "Guide : configuration WSL2",
+              "titleEn": "Guide: WSL2 setup",
+              "type": "lesson",
+              "duration": "20 min",
+              "file": "content/web/installations/guide-linux-wsl2.md",
+              "source": "sources/odin/foundations/installations/installation_guides/linux/wsl2.md"
+            },
+            {
+              "id": "guide-text-editors-linux",
+              "title": "Guide : installer VSCode sur Linux",
+              "titleEn": "Guide: Install VSCode on Linux",
+              "type": "lesson",
+              "duration": "10 min",
+              "file": "content/web/installations/guide-text-editors-linux.md",
+              "source": "sources/odin/foundations/installations/installation_guides/text_editors/linux.md"
+            },
+            {
+              "id": "guide-text-editors-macos",
+              "title": "Guide : installer VSCode sur macOS",
+              "titleEn": "Guide: Install VSCode on macOS",
+              "type": "lesson",
+              "duration": "10 min",
+              "file": "content/web/installations/guide-text-editors-macos.md",
+              "source": "sources/odin/foundations/installations/installation_guides/text_editors/macos.md"
+            },
+            {
+              "id": "guide-text-editors-wsl2",
+              "title": "Guide : installer VSCode sur WSL2",
+              "titleEn": "Guide: Install VSCode on WSL2",
+              "type": "lesson",
+              "duration": "10 min",
+              "file": "content/web/installations/guide-text-editors-wsl2.md",
+              "source": "sources/odin/foundations/installations/installation_guides/text_editors/wsl2.md"
+            },
+            {
+              "id": "guide-linux-virtual-machine",
+              "title": "Guide : installer une machine virtuelle",
+              "titleEn": "Guide: Virtual Machine installation",
+              "type": "lesson",
+              "duration": "25 min",
+              "file": "content/web/installations/guide-linux-virtual-machine.md",
+              "source": "sources/odin/foundations/installations/installation_guides/linux/virtual_machine.md"
+            }
+          ]
+        },
+        {
+          "id": "html-foundations",
+          "title": "Fondations HTML",
+          "titleEn": "HTML Foundations",
+          "description": "Structurer une page avec HTML : balises, texte, listes, liens, images et premier projet.",
+          "lessons": [
+            {
+              "id": "intro-to-html-css",
+              "title": "Introduction au HTML et au CSS",
+              "titleEn": "Introduction to HTML and CSS",
+              "type": "lesson",
+              "duration": "5 min",
+              "file": "content/web/html-foundations/intro-to-html-css.md",
+              "source": "sources/odin/foundations/html_css/html_foundations/intro_to_html_css.md"
+            },
+            {
+              "id": "elements-and-tags",
+              "title": "Éléments et balises",
+              "titleEn": "Elements and Tags",
+              "type": "lesson",
+              "duration": "10 min",
+              "file": "content/web/html-foundations/elements-and-tags.md",
+              "source": "sources/odin/foundations/html_css/html_foundations/elements_and_tags.md"
+            },
+            {
+              "id": "html-boilerplate",
+              "title": "Le squelette HTML",
+              "titleEn": "HTML Boilerplate",
+              "type": "lesson",
+              "duration": "15 min",
+              "file": "content/web/html-foundations/html-boilerplate.md",
+              "source": "sources/odin/foundations/html_css/html_foundations/html_boilerplate.md"
+            },
+            {
+              "id": "working-with-text",
+              "title": "Travailler avec le texte",
+              "titleEn": "Working with Text",
+              "type": "lesson",
+              "duration": "15 min",
+              "file": "content/web/html-foundations/working-with-text.md",
+              "source": "sources/odin/foundations/html_css/html_foundations/working_with_text.md"
+            },
+            {
+              "id": "lists",
+              "title": "Les listes",
+              "titleEn": "Lists",
+              "type": "lesson",
+              "duration": "10 min",
+              "file": "content/web/html-foundations/lists.md",
+              "source": "sources/odin/foundations/html_css/html_foundations/lists.md"
+            },
+            {
+              "id": "links-and-images",
+              "title": "Liens et images",
+              "titleEn": "Links and Images",
+              "type": "lesson",
+              "duration": "25 min",
+              "file": "content/web/html-foundations/links-and-images.md",
+              "source": "sources/odin/foundations/html_css/html_foundations/links_and_images.md"
+            },
+            {
+              "id": "project-recipes",
+              "title": "Projet : Recettes",
+              "titleEn": "Project: Recipes",
+              "type": "project",
+              "duration": "1–2 h",
+              "file": "content/web/html-foundations/project-recipes.md",
+              "source": "sources/odin/foundations/html_css/html_foundations/project_recipes.md"
+            }
+          ]
+        },
+        {
+          "id": "css-foundations",
+          "title": "Fondations CSS",
+          "titleEn": "CSS Foundations",
+          "description": "Mettre en forme une page avec CSS : cascade, inspecteur, modèle de boîte et affichage.",
+          "lessons": [
+            {
+              "id": "intro-to-css",
+              "title": "Introduction au CSS",
+              "titleEn": "Intro to CSS",
+              "type": "lesson",
+              "duration": "15 min",
+              "file": "content/web/css-foundations/intro-to-css.md",
+              "source": "sources/odin/foundations/html_css/css_foundations/intro_to_css.md"
+            },
+            {
+              "id": "the-cascade",
+              "title": "La cascade",
+              "titleEn": "The Cascade",
+              "type": "lesson",
+              "duration": "20 min",
+              "file": "content/web/css-foundations/the-cascade.md",
+              "source": "sources/odin/foundations/html_css/css_foundations/the_cascade.md"
+            },
+            {
+              "id": "inspecting-html-and-css",
+              "title": "Inspecter le HTML et le CSS",
+              "titleEn": "Inspecting HTML and CSS",
+              "type": "lesson",
+              "duration": "15 min",
+              "file": "content/web/css-foundations/inspecting-html-and-css.md",
+              "source": "sources/odin/foundations/html_css/css_foundations/inspecting_html_and_css.md"
+            },
+            {
+              "id": "the-box-model",
+              "title": "Le modèle de boîte",
+              "titleEn": "The Box Model",
+              "type": "lesson",
+              "duration": "20 min",
+              "file": "content/web/css-foundations/the-box-model.md",
+              "source": "sources/odin/foundations/html_css/css_foundations/the_box_model.md"
+            },
+            {
+              "id": "block-and-inline",
+              "title": "Blocs et éléments en ligne",
+              "titleEn": "Block and Inline",
+              "type": "lesson",
+              "duration": "15 min",
+              "file": "content/web/css-foundations/block-and-inline.md",
+              "source": "sources/odin/foundations/html_css/css_foundations/block_and_inline.md"
+            }
+          ]
+        },
+        {
+          "id": "flexbox",
+          "title": "Flexbox",
+          "titleEn": "Flexbox",
+          "description": "Maîtriser les axes, l'alignement et le dimensionnement Flexbox, puis construire une page complète.",
+          "lessons": [
+            {
+              "id": "flexbox-intro",
+              "title": "Introduction à Flexbox",
+              "titleEn": "Flexbox Intro",
+              "type": "lesson",
+              "duration": "15 min",
+              "file": "content/web/flexbox/flexbox-intro.md",
+              "source": "sources/odin/foundations/html_css/flexbox/flexbox_intro.md"
+            },
+            {
+              "id": "flexbox-axes",
+              "title": "Les axes Flexbox",
+              "titleEn": "Flexbox Axes",
+              "type": "lesson",
+              "duration": "15 min",
+              "file": "content/web/flexbox/flexbox-axes.md",
+              "source": "sources/odin/foundations/html_css/flexbox/flexbox_axes.md"
+            },
+            {
+              "id": "flexbox-alignment",
+              "title": "L'alignement Flexbox",
+              "titleEn": "Flexbox Alignment",
+              "type": "lesson",
+              "duration": "20 min",
+              "file": "content/web/flexbox/flexbox-alignment.md",
+              "source": "sources/odin/foundations/html_css/flexbox/flexbox_alignment.md"
+            },
+            {
+              "id": "flexbox-growing-and-shrinking",
+              "title": "Croissance et rétrécissement Flexbox",
+              "titleEn": "Flexbox Growing and Shrinking",
+              "type": "lesson",
+              "duration": "20 min",
+              "file": "content/web/flexbox/flexbox-growing-and-shrinking.md",
+              "source": "sources/odin/foundations/html_css/flexbox/flexbox_growing_and_shrinking.md"
+            },
+            {
+              "id": "project-landing-page",
+              "title": "Projet : page d'atterrissage",
+              "titleEn": "Project: Landing Page",
+              "type": "project",
+              "duration": "2–4 h",
+              "file": "content/web/flexbox/project-landing-page.md",
+              "source": "sources/odin/foundations/html_css/flexbox/project_landing_page.md"
+            }
+          ]
+        },
+        {
+          "id": "javascript-basics",
+          "title": "Bases de JavaScript",
+          "titleEn": "JavaScript Basics",
+          "description": "Variables, fonctions, objets, DOM, erreurs et projets interactifs en JavaScript.",
+          "lessons": [
+            {
+              "id": "variables-and-operators",
+              "title": "Variables et opérateurs",
+              "titleEn": "Variables and Operators",
+              "type": "lesson",
+              "duration": "20 min",
+              "file": "content/web/javascript-basics/variables-and-operators.md",
+              "source": "sources/odin/foundations/javascript_basics/variables_and_operators.md"
+            },
+            {
+              "id": "data-types-and-conditionals",
+              "title": "Types de données et conditions",
+              "titleEn": "Data Types and Conditionals",
+              "type": "lesson",
+              "duration": "25 min",
+              "file": "content/web/javascript-basics/data-types-and-conditionals.md",
+              "source": "sources/odin/foundations/javascript_basics/data_types_and_conditionals.md"
+            },
+            {
+              "id": "function-basics",
+              "title": "Les bases des fonctions",
+              "titleEn": "Function Basics",
+              "type": "lesson",
+              "duration": "20 min",
+              "file": "content/web/javascript-basics/function-basics.md",
+              "source": "sources/odin/foundations/javascript_basics/function_basics.md"
+            },
+            {
+              "id": "understanding-errors",
+              "title": "Comprendre les erreurs",
+              "titleEn": "Understanding Errors",
+              "type": "lesson",
+              "duration": "15 min",
+              "file": "content/web/javascript-basics/understanding-errors.md",
+              "source": "sources/odin/foundations/javascript_basics/understanding_errors.md"
+            },
+            {
+              "id": "installing-nodejs",
+              "title": "Installer Node.js",
+              "titleEn": "Installing Node.js",
+              "type": "lesson",
+              "duration": "15 min",
+              "file": "content/web/javascript-basics/installing-nodejs.md",
+              "source": "sources/odin/foundations/javascript_basics/installing_nodejs.md"
+            },
+            {
+              "id": "javascript-developer-tools",
+              "title": "Les outils du développeur JavaScript",
+              "titleEn": "JavaScript Developer Tools",
+              "type": "lesson",
+              "duration": "15 min",
+              "file": "content/web/javascript-basics/javascript-developer-tools.md",
+              "source": "sources/odin/foundations/javascript_basics/javascript_developer_tools.md"
+            },
+            {
+              "id": "guide-nvm-linux",
+              "title": "Guide : installer nvm sur Linux",
+              "titleEn": "Guide: Install nvm on Linux",
+              "type": "lesson",
+              "duration": "10 min",
+              "file": "content/web/javascript-basics/guide-nvm-linux.md",
+              "source": "sources/odin/foundations/javascript_basics/installation_guides/linux.md"
+            },
+            {
+              "id": "guide-nvm-macos",
+              "title": "Guide : installer nvm sur macOS",
+              "titleEn": "Guide: Install nvm on macOS",
+              "type": "lesson",
+              "duration": "10 min",
+              "file": "content/web/javascript-basics/guide-nvm-macos.md",
+              "source": "sources/odin/foundations/javascript_basics/installation_guides/macos.md"
+            },
+            {
+              "id": "clean-code",
+              "title": "Écrire du code clair",
+              "titleEn": "Clean Code",
+              "type": "lesson",
+              "duration": "25 min",
+              "file": "content/web/javascript-basics/clean-code.md",
+              "source": "sources/odin/foundations/javascript_basics/clean_code.md"
+            },
+            {
+              "id": "problem-solving",
+              "title": "Résolution de problèmes",
+              "titleEn": "Problem Solving",
+              "type": "lesson",
+              "duration": "30 min",
+              "file": "content/web/javascript-basics/problem-solving.md",
+              "source": "sources/odin/foundations/javascript_basics/problem_solving.md"
+            },
+            {
+              "id": "loops-and-arrays",
+              "title": "Boucles et tableaux",
+              "titleEn": "Loops and Arrays",
+              "type": "lesson",
+              "duration": "35 min",
+              "file": "content/web/javascript-basics/loops-and-arrays.md",
+              "source": "sources/odin/foundations/javascript_basics/loops_and_arrays.md"
+            },
+            {
+              "id": "object-basics",
+              "title": "Les bases des objets",
+              "titleEn": "Object Basics",
+              "type": "lesson",
+              "duration": "20 min",
+              "file": "content/web/javascript-basics/object-basics.md",
+              "source": "sources/odin/foundations/javascript_basics/object_basics.md"
+            },
+            {
+              "id": "DOM-manipulation-and-events",
+              "title": "Manipulation du DOM et événements",
+              "titleEn": "DOM Manipulation and Events",
+              "type": "lesson",
+              "duration": "30 min",
+              "file": "content/web/javascript-basics/DOM-manipulation-and-events.md",
+              "source": "sources/odin/foundations/javascript_basics/DOM_manipulation_and_events.md"
+            },
+            {
+              "id": "project-rock-paper-scissors",
+              "title": "Projet : pierre-papier-ciseaux",
+              "titleEn": "Project: Rock Paper Scissors",
+              "type": "project",
+              "duration": "1–2 h",
+              "file": "content/web/javascript-basics/project-rock-paper-scissors.md",
+              "source": "sources/odin/foundations/javascript_basics/project_rock_paper_scissors.md"
+            },
+            {
+              "id": "revisiting-rock-paper-scissors",
+              "title": "Revoir pierre-papier-ciseaux",
+              "titleEn": "Revisiting Rock Paper Scissors",
+              "type": "lesson",
+              "duration": "30 min",
+              "file": "content/web/javascript-basics/revisiting-rock-paper-scissors.md",
+              "source": "sources/odin/foundations/javascript_basics/revisiting_rock_paper_scissors.md"
+            },
+            {
+              "id": "project-calculator",
+              "title": "Projet : calculatrice",
+              "titleEn": "Project: Calculator",
+              "type": "project",
+              "duration": "2–4 h",
+              "file": "content/web/javascript-basics/project-calculator.md",
+              "source": "sources/odin/foundations/javascript_basics/project_calculator.md"
+            },
+            {
+              "id": "project-etch-a-sketch",
+              "title": "Projet : Etch-a-Sketch",
+              "titleEn": "Project: Etch-a-Sketch",
+              "type": "project",
+              "duration": "2–4 h",
+              "file": "content/web/javascript-basics/project-etch-a-sketch.md",
+              "source": "sources/odin/foundations/javascript_basics/project_etch_a_sketch.md"
+            }
+          ]
+        },
+        {
+          "id": "git-foundations",
+          "title": "Fondations Git",
+          "titleEn": "Git Foundations",
+          "description": "Versionner son code avec Git et rédiger des messages de commit utiles.",
+          "lessons": [
+            {
+              "id": "introduction-to-git",
+              "title": "Introduction à Git",
+              "titleEn": "Introduction to Git",
+              "type": "lesson",
+              "duration": "20 min",
+              "file": "content/web/git-foundations/introduction-to-git.md",
+              "source": "sources/odin/git/foundations_git/introduction_to_git.md"
+            },
+            {
+              "id": "git-basics",
+              "title": "Les bases de Git",
+              "titleEn": "Git Basics",
+              "type": "lesson",
+              "duration": "25 min",
+              "file": "content/web/git-foundations/git-basics.md",
+              "source": "sources/odin/git/foundations_git/git_basics.md"
+            },
+            {
+              "id": "commit-messages",
+              "title": "Les messages de commit",
+              "titleEn": "Commit Messages",
+              "type": "lesson",
+              "duration": "10 min",
+              "file": "content/web/git-foundations/commit-messages.md",
+              "source": "sources/odin/git/foundations_git/commit_messages.md"
+            }
+          ]
+        },
+        {
+          "id": "conclusion",
+          "title": "Conclusion",
+          "titleEn": "Conclusion",
+          "description": "Faire le point sur les acquis et préparer la suite du parcours.",
+          "lessons": [
+            {
+              "id": "conclusion",
+              "title": "Conclusion",
+              "titleEn": "Conclusion",
+              "type": "lesson",
+              "duration": "10 min",
+              "file": "content/web/conclusion/conclusion.md",
+              "source": "sources/odin/foundations/tying_it_all_together/conclusion.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "title": "Programmation Python",
+      "titleEn": "Python Programming",
+      "shortTitle": "Python",
+      "description": "Défi 30 Jours de Python, traduit et adapté en français.",
+      "source": "https://github.com/Asabeneh/30-Days-Of-Python",
+      "license": "Traduction communautaire, licence non explicite",
+      "modules": [
+        {
+          "id": "demarrage",
+          "title": "Démarrage",
+          "titleEn": "Getting Started",
+          "description": "Installation, syntaxe, variables et opérateurs.",
+          "lessons": [
+            {
+              "id": "introduction",
+              "title": "Jour 1 — Introduction à Python",
+              "titleEn": "Introduction",
+              "type": "lesson",
+              "duration": "30 min",
+              "file": "content/python/demarrage/introduction.md",
+              "source": "sources/python/French/README_fr.md"
+            },
+            {
+              "id": "variables-et-fonctions-integrees",
+              "title": "Jour 2 — Variables et fonctions intégrées",
+              "titleEn": "Variables, Built-in Functions",
+              "type": "lesson",
+              "duration": "40 min",
+              "file": "content/python/demarrage/variables-et-fonctions-integrees.md",
+              "source": "sources/python/French/02_variables_builtin_functions_fr.md"
+            },
+            {
+              "id": "operateurs",
+              "title": "Jour 3 — Opérateurs",
+              "titleEn": "Operators",
+              "type": "lesson",
+              "duration": "40 min",
+              "file": "content/python/demarrage/operateurs.md",
+              "source": "sources/python/French/03_operators_fr.md"
+            }
+          ]
+        },
+        {
+          "id": "structures-donnees",
+          "title": "Structures de données",
+          "titleEn": "Data Structures",
+          "description": "Chaînes, listes, tuples, ensembles et dictionnaires.",
+          "lessons": [
+            {
+              "id": "chaines-de-caracteres",
+              "title": "Jour 4 — Chaînes de caractères",
+              "titleEn": "Strings",
+              "type": "lesson",
+              "duration": "45 min",
+              "file": "content/python/structures-donnees/chaines-de-caracteres.md",
+              "source": "sources/python/French/04_strings_fr.md"
+            },
+            {
+              "id": "listes",
+              "title": "Jour 5 — Listes",
+              "titleEn": "Lists",
+              "type": "lesson",
+              "duration": "45 min",
+              "file": "content/python/structures-donnees/listes.md",
+              "source": "sources/python/French/05_lists_fr.md"
+            },
+            {
+              "id": "tuples",
+              "title": "Jour 6 — Tuples",
+              "titleEn": "Tuples",
+              "type": "lesson",
+              "duration": "40 min",
+              "file": "content/python/structures-donnees/tuples.md",
+              "source": "sources/python/French/06_tuples_fr.md"
+            },
+            {
+              "id": "ensembles",
+              "title": "Jour 7 — Ensembles",
+              "titleEn": "Sets",
+              "type": "lesson",
+              "duration": "45 min",
+              "file": "content/python/structures-donnees/ensembles.md",
+              "source": "sources/python/French/07_sets_fr.md"
+            },
+            {
+              "id": "dictionnaires",
+              "title": "Jour 8 — Dictionnaires",
+              "titleEn": "Dictionaries",
+              "type": "lesson",
+              "duration": "45 min",
+              "file": "content/python/structures-donnees/dictionnaires.md",
+              "source": "sources/python/French/08_dictionaries_fr.md"
+            }
+          ]
+        },
+        {
+          "id": "controle-et-fonctions",
+          "title": "Contrôle et fonctions",
+          "titleEn": "Control Flow and Functions",
+          "description": "Conditions, boucles, fonctions, modules et compréhension de listes.",
+          "lessons": [
+            {
+              "id": "conditions",
+              "title": "Jour 9 — Conditions",
+              "titleEn": "Conditionals",
+              "type": "lesson",
+              "duration": "45 min",
+              "file": "content/python/controle-et-fonctions/conditions.md",
+              "source": "sources/python/French/09_conditionals_fr.md"
+            },
+            {
+              "id": "boucles",
+              "title": "Jour 10 — Boucles",
+              "titleEn": "Loops",
+              "type": "lesson",
+              "duration": "50 min",
+              "file": "content/python/controle-et-fonctions/boucles.md",
+              "source": "sources/python/French/10_loops_fr.md"
+            },
+            {
+              "id": "fonctions",
+              "title": "Jour 11 — Fonctions",
+              "titleEn": "Functions",
+              "type": "lesson",
+              "duration": "60 min",
+              "file": "content/python/controle-et-fonctions/fonctions.md",
+              "source": "sources/python/French/11_functions_fr.md"
+            },
+            {
+              "id": "modules",
+              "title": "Jour 12 — Modules",
+              "titleEn": "Modules",
+              "type": "lesson",
+              "duration": "45 min",
+              "file": "content/python/controle-et-fonctions/modules.md",
+              "source": "sources/python/French/12_modules_fr.md"
+            },
+            {
+              "id": "comprehension-de-listes",
+              "title": "Jour 13 — Compréhension de listes",
+              "titleEn": "List Comprehension",
+              "type": "lesson",
+              "duration": "40 min",
+              "file": "content/python/controle-et-fonctions/comprehension-de-listes.md",
+              "source": "sources/python/French/13_list_comprehension_fr.md"
+            },
+            {
+              "id": "fonctions-d-ordre-superieur",
+              "title": "Jour 14 — Fonctions d'ordre supérieur",
+              "titleEn": "Higher Order Functions",
+              "type": "lesson",
+              "duration": "60 min",
+              "file": "content/python/controle-et-fonctions/fonctions-d-ordre-superieur.md",
+              "source": "sources/python/French/14_higher_order_functions_fr.md"
+            }
+          ]
+        },
+        {
+          "id": "erreurs-et-fichiers",
+          "title": "Erreurs et fichiers",
+          "titleEn": "Errors and Files",
+          "description": "Exceptions, dates, expressions régulières et gestion de fichiers.",
+          "lessons": [
+            {
+              "id": "erreurs-de-type",
+              "title": "Jour 15 — Erreurs de type en Python",
+              "titleEn": "Python Type Errors",
+              "type": "lesson",
+              "duration": "45 min",
+              "file": "content/python/erreurs-et-fichiers/erreurs-de-type.md",
+              "source": "sources/python/French/15_python_type_errors_fr.md"
+            },
+            {
+              "id": "date-et-heure",
+              "title": "Jour 16 — Date et heure",
+              "titleEn": "Python Date time",
+              "type": "lesson",
+              "duration": "45 min",
+              "file": "content/python/erreurs-et-fichiers/date-et-heure.md",
+              "source": "sources/python/French/16_python_datetime_fr.md"
+            },
+            {
+              "id": "gestion-des-exceptions",
+              "title": "Jour 17 — Gestion des exceptions",
+              "titleEn": "Exception Handling",
+              "type": "lesson",
+              "duration": "50 min",
+              "file": "content/python/erreurs-et-fichiers/gestion-des-exceptions.md",
+              "source": "sources/python/French/17_exception_handling_fr.md"
+            },
+            {
+              "id": "expressions-regulieres",
+              "title": "Jour 18 — Expressions régulières",
+              "titleEn": "Regular Expressions",
+              "type": "lesson",
+              "duration": "60 min",
+              "file": "content/python/erreurs-et-fichiers/expressions-regulieres.md",
+              "source": "sources/python/French/18_regular_expressions_fr.md"
+            },
+            {
+              "id": "gestion-des-fichiers",
+              "title": "Jour 19 — Gestion des fichiers",
+              "titleEn": "File Handling",
+              "type": "lesson",
+              "duration": "60 min",
+              "file": "content/python/erreurs-et-fichiers/gestion-des-fichiers.md",
+              "source": "sources/python/French/19_file_handling_fr.md"
+            }
+          ]
+        },
+        {
+          "id": "modules-et-poo",
+          "title": "Modules et POO",
+          "titleEn": "Modules and OOP",
+          "description": "Paquets, classes, objets, scraping et environnements virtuels.",
+          "lessons": [
+            {
+              "id": "gestionnaire-de-paquets",
+              "title": "Jour 20 — Gestionnaire de paquets Python",
+              "titleEn": "Python Package Manager",
+              "type": "lesson",
+              "duration": "60 min",
+              "file": "content/python/modules-et-poo/gestionnaire-de-paquets.md",
+              "source": "sources/python/French/20_python_package_manager_fr.md"
+            },
+            {
+              "id": "classes-et-objets",
+              "title": "Jour 21 — Classes et objets",
+              "titleEn": "Classes and Objects",
+              "type": "lesson",
+              "duration": "70 min",
+              "file": "content/python/modules-et-poo/classes-et-objets.md",
+              "source": "sources/python/French/21_classes_and_objects_fr.md"
+            },
+            {
+              "id": "web-scraping",
+              "title": "Jour 22 — Web scraping",
+              "titleEn": "Web Scraping",
+              "type": "lesson",
+              "duration": "50 min",
+              "file": "content/python/modules-et-poo/web-scraping.md",
+              "source": "sources/python/French/22_web_scraping_fr.md"
+            },
+            {
+              "id": "environnements-virtuels",
+              "title": "Jour 23 — Environnements virtuels",
+              "titleEn": "Virtual Environment",
+              "type": "lesson",
+              "duration": "40 min",
+              "file": "content/python/modules-et-poo/environnements-virtuels.md",
+              "source": "sources/python/French/23_virtual_environment_fr.md"
+            }
+          ]
+        },
+        {
+          "id": "data-et-web",
+          "title": "Data, web et API",
+          "titleEn": "Data, Web and APIs",
+          "description": "Statistiques, Pandas, Flask, MongoDB et construction d'API.",
+          "lessons": [
+            {
+              "id": "statistiques",
+              "title": "Jour 24 — Statistiques",
+              "titleEn": "Statistics",
+              "type": "lesson",
+              "duration": "75 min",
+              "file": "content/python/data-et-web/statistiques.md",
+              "source": "sources/python/French/24_statistics_fr.md"
+            },
+            {
+              "id": "pandas",
+              "title": "Jour 25 — Pandas",
+              "titleEn": "Pandas",
+              "type": "lesson",
+              "duration": "90 min",
+              "file": "content/python/data-et-web/pandas.md",
+              "source": "sources/python/French/25_pandas_fr.md"
+            },
+            {
+              "id": "python-pour-le-web",
+              "title": "Jour 26 — Python pour le web",
+              "titleEn": "Python web",
+              "type": "lesson",
+              "duration": "60 min",
+              "file": "content/python/data-et-web/python-pour-le-web.md",
+              "source": "sources/python/French/26_python_web_fr.md"
+            },
+            {
+              "id": "python-et-mongodb",
+              "title": "Jour 27 — Python et MongoDB",
+              "titleEn": "Python with MongoDB",
+              "type": "lesson",
+              "duration": "75 min",
+              "file": "content/python/data-et-web/python-et-mongodb.md",
+              "source": "sources/python/French/27_python_with_mongodb_fr.md"
+            },
+            {
+              "id": "api",
+              "title": "Jour 28 — API",
+              "titleEn": "API",
+              "type": "lesson",
+              "duration": "60 min",
+              "file": "content/python/data-et-web/api.md",
+              "source": "sources/python/French/28_API_fr.md"
+            },
+            {
+              "id": "construire-une-api",
+              "title": "Jour 29 — Construire une API",
+              "titleEn": "Building API",
+              "type": "lesson",
+              "duration": "75 min",
+              "file": "content/python/data-et-web/construire-une-api.md",
+              "source": "sources/python/French/29_building_API_fr.md"
+            }
+          ]
+        },
+        {
+          "id": "conclusion",
+          "title": "Conclusion",
+          "titleEn": "Conclusion",
+          "description": "Bilan du défi et prochaines étapes.",
+          "lessons": [
+            {
+              "id": "conclusion",
+              "title": "Jour 30 — Conclusion",
+              "titleEn": "Conclusions",
+              "type": "lesson",
+              "duration": "10 min",
+              "file": "content/python/conclusion/conclusion.md",
+              "source": "sources/python/French/30_conclusions_fr.md"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
