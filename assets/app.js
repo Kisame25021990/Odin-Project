@@ -49,6 +49,10 @@
     return lesson.trackId + "/" + lesson.moduleId + "/" + lesson.id;
   }
 
+  function quizScoreKey(lesson) {
+    return lesson.trackId + "/" + lesson.id;
+  }
+
   function moduleKey(trackId, moduleId) {
     return trackId + "/" + moduleId;
   }
@@ -432,7 +436,8 @@
         return;
       }
       const done = isDone(lesson);
-      const passed = (state.quizScores[lesson.id] || {}).score >= 80;
+      const legacyScore = lesson.id === "conclusion" ? null : state.quizScores[lesson.id];
+      const passed = (state.quizScores[quizScoreKey(lesson)] || legacyScore || {}).score >= 80;
       const active = state.current !== null && lessonKey(state.current) === key;
       link.classList.toggle("is-done", done);
       link.classList.toggle("is-active", active);
@@ -599,7 +604,7 @@
   }
 
   function appendQuiz(parent, lesson) {
-    const quiz = state.quizzes[lesson.id];
+    const quiz = state.quizzes[lesson.trackId + "/" + lesson.id] || state.quizzes[lesson.id];
     if (!quiz || !quiz.length) return;
     const section = document.createElement("section");
     section.className = "quiz-panel";
@@ -611,6 +616,7 @@
       const q=quiz[qi], field=document.createElement("fieldset");
       field.dataset.quizIndex=String(qi);
       field.innerHTML='<legend>'+(number+1)+'. '+escapeHtml(q.question)+'</legend>';
+      if(q.code){const pre=document.createElement("pre"),code=document.createElement("code");pre.className="quiz-code";code.textContent=q.code;pre.appendChild(code);field.appendChild(pre);}
       const opts=q.choices.map(function (choice,i) {return {choice:choice,index:i};}); shuffle(opts).forEach(function (item) {
         const label=document.createElement("label"), input=document.createElement("input"); input.type=q.type==="multiple"?"checkbox":"radio"; input.name="q"+qi; input.value=item.index;
         label.appendChild(input); label.appendChild(document.createTextNode(" "+item.choice)); field.appendChild(label);
@@ -619,25 +625,85 @@
     });
     const submit=document.createElement("button"); submit.type="submit"; submit.textContent="Vérifier mes réponses"; form.appendChild(submit);
     form.addEventListener("submit",function (event) { event.preventDefault(); let score=0; quiz.forEach(function(q,qi){const selected=Array.from(form.querySelectorAll('[name="q'+qi+'"]:checked')).map(function(x){return Number(x.value);}).sort();const expected=q.answer.slice().sort();const correct=selected.length===expected.length&&selected.every(function(x,i){return x===expected[i];}); if(correct)score++; const field=form.querySelector('[data-quiz-index="'+qi+'"]'), explanation=field.querySelector(".quiz-explanation"); explanation.hidden=false; explanation.classList.toggle("is-correct",correct); explanation.classList.toggle("is-wrong",!correct);});
-      const percent=Math.round(score/quiz.length*100), saved=state.quizScores[lesson.id]||{score:0}; if(percent>saved.score){state.quizScores[lesson.id]={score:percent,date:new Date().toISOString()};writeStorage(QUIZ_KEY,JSON.stringify(state.quizScores));} section.querySelector(".quiz-result").textContent="Score : "+score+" / "+quiz.length+" ("+percent+" %)."; updateNavState(); });
+      const percent=Math.round(score/quiz.length*100), key=quizScoreKey(lesson), legacy=lesson.id==="conclusion"?null:state.quizScores[lesson.id], saved=state.quizScores[key]||legacy||{score:0}; if(percent>saved.score){state.quizScores[key]={score:percent,date:new Date().toISOString()};writeStorage(QUIZ_KEY,JSON.stringify(state.quizScores));} section.querySelector(".quiz-result").textContent="Score : "+score+" / "+quiz.length+" ("+percent+" %)."; updateNavState(); });
     section.querySelector(".quiz-restart").addEventListener("click",function(){appendQuiz(parent,lesson);section.remove();}); parent.appendChild(section);
   }
 
   function appendTerminal(parent) {
-    const details=document.createElement("details"); details.className="python-terminal"; details.id="python-panel";
-    details.innerHTML='<summary>Ouvrir le terminal</summary><p class="terminal-status" aria-live="polite">Python se chargera au premier lancement.</p><textarea id="python-code" aria-label="Code Python" rows="8" spellcheck="false">print("Bonjour !")</textarea><div class="terminal-actions"><button type="button" class="terminal-run">Exécuter</button><button type="button" class="terminal-clear">Effacer</button></div><pre class="terminal-output" aria-live="polite"></pre>';
+    const details = document.createElement("details");
+    details.className = "python-terminal";
+    details.id = "python-panel";
+    details.innerHTML = '<summary>Ouvrir le terminal</summary><p class="terminal-status" aria-live="polite">Python se chargera au premier lancement.</p><textarea id="python-code" aria-label="Code Python" rows="8" spellcheck="false">print("Bonjour !")</textarea><div class="terminal-actions"><button type="button" class="terminal-run">Exécuter</button><button type="button" class="terminal-clear">Effacer</button></div><pre class="terminal-output" aria-live="polite"></pre>';
     parent.appendChild(details);
-    const status=details.querySelector(".terminal-status"), output=details.querySelector(".terminal-output");
-    details.querySelector(".terminal-clear").addEventListener("click",function(){document.getElementById("python-code").value="";output.textContent="";});
-    details.querySelector(".terminal-run").addEventListener("click",async function(){
-      const run=details.querySelector(".terminal-run"); run.disabled=true; output.textContent="";
+    const status = details.querySelector(".terminal-status");
+    const output = details.querySelector(".terminal-output");
+    const run = details.querySelector(".terminal-run");
+    let executionTimeout = null;
+
+    details.querySelector(".terminal-clear").addEventListener("click", function () {
+      document.getElementById("python-code").value = "";
+      output.textContent = "";
+    });
+
+    run.addEventListener("click", async function () {
+      run.disabled = true;
+      output.textContent = "";
       try {
-        if(!state.terminalWorker){status.textContent="Chargement de Python… (~10 Mo)"; const worker=new Worker("assets/python-worker.js"); state.terminalWorker=worker; worker.onmessage=function(e){if(e.data.type==="ready"){status.textContent="Python est prêt.";}else if(e.data.type==="result"){output.textContent=e.data.text;output.classList.toggle("terminal-error",e.data.error);run.disabled=false;}else if(e.data.type==="input"){e.data.value=window.prompt(e.data.prompt||"Saisissez une valeur :")||"";worker.postMessage({type:"input",id:e.data.id,value:e.data.value});}}; worker.onerror=function(){status.textContent="Impossible de charger Python. Vérifiez votre connexion ou l'installation locale de Pyodide.";run.disabled=false;}; await new Promise(function(resolve,reject){const t=setTimeout(function(){reject(new Error("CDN inaccessible"));},20000);worker.addEventListener("message",function ready(e){if(e.data.type==="ready"){clearTimeout(t);worker.removeEventListener("message",ready);resolve();}},{once:false});}); }
-        let code=document.getElementById("python-code").value;
-        const inputs=Array.from(code.matchAll(/\binput\s*\((?:['"]([^'"]*)['"])?\)/g));
-        if(inputs.length){const values=[];for(const item of inputs){values.push(window.prompt(item[1]||"Valeur pour input() :")||"");} code="__odin_inputs = "+JSON.stringify(values)+"\nimport builtins\n__odin_it = iter(__odin_inputs)\nbuiltins.input = lambda prompt='': next(__odin_it, '')\n"+code;}
-        state.terminalWorker.postMessage({type:"run",code:code}); setTimeout(function(){if(run.disabled){state.terminalWorker.terminate();state.terminalWorker=null;output.textContent="Timeout : exécution interrompue après 10 secondes.";output.classList.add("terminal-error");run.disabled=false;}},10000);
-      } catch(error){status.textContent="Pyodide inaccessible. Vérifiez votre connexion ou l'installation dans /pyodide/.";run.disabled=false;}
+        if (!state.terminalWorker) {
+          status.textContent = "Chargement de Python… (~10 Mo)";
+          const worker = new Worker("assets/python-worker.js", { type: "module" });
+          state.terminalWorker = worker;
+          await new Promise(function (resolve, reject) {
+            const timeout = window.setTimeout(function () {
+              reject(new Error("Délai dépassé pendant le chargement de Pyodide."));
+            }, 30000);
+            worker.onmessage = function (event) {
+              if (event.data.type === "ready") {
+                status.textContent = "Python est prêt.";
+                window.clearTimeout(timeout);
+                resolve();
+              } else if (event.data.type === "load-error") {
+                window.clearTimeout(timeout);
+                reject(new Error(event.data.message));
+              } else if (event.data.type === "result") {
+                window.clearTimeout(executionTimeout);
+                output.textContent = event.data.text;
+                output.classList.toggle("terminal-error", event.data.error);
+                run.disabled = false;
+              }
+            };
+            worker.onerror = function (event) {
+              window.clearTimeout(timeout);
+              reject(new Error(event.message || "Le navigateur a bloqué le chargement de Pyodide."));
+            };
+          });
+        }
+
+        let code = document.getElementById("python-code").value;
+        const inputs = Array.from(code.matchAll(/\binput\s*\((?:['"]([^'"]*)['"])?\)/g));
+        if (inputs.length) {
+          const values = [];
+          for (const item of inputs) values.push(window.prompt(item[1] || "Valeur pour input() :") || "");
+          code = "__odin_inputs = " + JSON.stringify(values) + "\nimport builtins\n__odin_it = iter(__odin_inputs)\nbuiltins.input = lambda prompt='': next(__odin_it, '')\n" + code;
+        }
+        state.terminalWorker.postMessage({ type: "run", code: code });
+        window.clearTimeout(executionTimeout);
+        executionTimeout = window.setTimeout(function () {
+          if (run.disabled) {
+            state.terminalWorker.terminate();
+            state.terminalWorker = null;
+            output.textContent = "Timeout : exécution interrompue après 10 secondes.";
+            output.classList.add("terminal-error");
+            run.disabled = false;
+            status.textContent = "Exécution interrompue. Python se rechargera au prochain lancement.";
+          }
+        }, 10000);
+      } catch (error) {
+        if (state.terminalWorker) state.terminalWorker.terminate();
+        state.terminalWorker = null;
+        status.textContent = "Pyodide inaccessible : " + error.message + ". Vérifiez votre connexion ou l'installation dans /pyodide/.";
+        run.disabled = false;
+      }
     });
   }
 
